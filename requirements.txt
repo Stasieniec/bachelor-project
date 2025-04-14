@@ -2,3 +2,5 @@ pandas
 numpy
 pytorch
 datasets
+fire
+torch

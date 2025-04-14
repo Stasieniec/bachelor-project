@@ -5,22 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c2854a7-d638-4a0e-bcac-57bd5454c0d4" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_25,_2_16 PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_25__2_16PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/imdb_text/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/imdb_text/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/imdb_text/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/imdb_text/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_scripts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_scripts/run_imdb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_shared/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_shared/evaluation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_shared/train_loop.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project_experiments/text/imdb/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/data/imdb_dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/models/text_classifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/utils/batch_sampler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bachelor_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bachelor_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_experiments/imdb_text/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_experiments/text/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_experiments/imdb_text/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_experiments/text/imdb/evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_experiments/imdb_text/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_experiments/text/imdb/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_experiments/imdb_text/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_scripts/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project_experiments/vision/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_scripts/run_imdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_shared/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_shared/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_shared/train_loop.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared/data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -61,19 +75,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -90,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744632198853</updated>
-      <workItem from="1744632199900" duration="2445000" />
+      <workItem from="1744632199900" duration="12465000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
