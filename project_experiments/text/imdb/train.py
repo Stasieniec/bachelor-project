@@ -8,7 +8,7 @@ from transformers import AutoTokenizer
 
 
 def train_model(
-        model_type='attention', # 'simple_attention' or 'normal'
+        model_type='simple_attention', # 'simple_attention' or 'normal'
         tokenizer_name='bert-base-uncased',
         embed_dim=128,
         learning_rate=0.001,
