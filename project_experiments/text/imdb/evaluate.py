@@ -2,11 +2,12 @@ import torch
 import torch.nn as nn
 from tqdm import tqdm
 from shared.data.imdb_dataset import IMDBDataModule
-from shared.models.text_classifier import SimpleTextClassifier
+from shared.models.text_classifier import SimpleTextClassifier, SimpleAttentionTextClassifier
 from transformers import AutoTokenizer
 
 
 def evaluate_model(
+        model_type='simple_attention',
         model_path='project_experiments/text/imdb/imdb_model.pt',
         tokenizer_name='bert-base-uncased',
         embed_dim=128,
@@ -24,10 +25,17 @@ def evaluate_model(
 
     # Setup model
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
-    model = SimpleTextClassifier(
-        vocab_size=tokenizer.vocab_size,
-        embed_dim=embed_dim
-    ).to(device)
+
+    if model_type == 'simple_attention':
+        model = SimpleAttentionTextClassifier(
+            vocab_size=tokenizer.vocab_size,
+            embed_dim=embed_dim
+        ).to(device)
+    else:
+        model = SimpleTextClassifier(
+            vocab_size=tokenizer.vocab_size,
+            embed_dim=embed_dim
+        ).to(device)
 
     # Load model weights
     model.load_state_dict(torch.load(model_path, map_location=device))

@@ -3,11 +3,12 @@ import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
 from shared.data.imdb_dataset import IMDBDataModule
-from shared.models.text_classifier import SimpleTextClassifier
+from shared.models.text_classifier import SimpleTextClassifier, SimpleAttentionTextClassifier
 from transformers import AutoTokenizer
 
 
 def train_model(
+        model_type='attention', # 'simple_attention' or 'normal'
         tokenizer_name='bert-base-uncased',
         embed_dim=128,
         learning_rate=0.001,
@@ -27,10 +28,19 @@ def train_model(
 
     # Setup model
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
-    model = SimpleTextClassifier(
-        vocab_size=tokenizer.vocab_size,
-        embed_dim=embed_dim
-    ).to(device)
+
+    # model type
+    if model_type == 'simple_attention':
+        model = SimpleAttentionTextClassifier(
+            vocab_size=tokenizer.vocab_size,
+            embed_dim=embed_dim
+        ).to(device)
+
+    else:
+        model = SimpleTextClassifier(
+            vocab_size=tokenizer.vocab_size,
+            embed_dim=embed_dim
+        ).to(device)
 
     # Setup training
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
