@@ -31,12 +31,14 @@ def train_model(
 
     # model type
     if model_type == 'simple_attention':
+        print('Training simple attention model')
         model = SimpleAttentionTextClassifier(
             vocab_size=tokenizer.vocab_size,
             embed_dim=embed_dim
         ).to(device)
 
     else:
+        print('Training simple average model')
         model = SimpleTextClassifier(
             vocab_size=tokenizer.vocab_size,
             embed_dim=embed_dim
