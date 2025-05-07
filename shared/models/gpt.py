@@ -150,7 +150,7 @@ class SimpleGPT(nn.Module):
         x = self.embed(idx)                              # (B,T,d)
 
         for block in self.blocks:
-            x = block(x, mask=None)                      # mask already in block
+            x = block(x)                      # mask already in block
 
         x = self.ln_f(x)
         logits = self.head(x)                            # (B,T,256)
