@@ -111,7 +111,7 @@ class ByteEmbedding(nn.Module):
 
     def forward(self, idx):
         B, T = idx.shape
-        tok = self.token_emb
+        tok = self.token_emb(idx)
         pos = self.pos_emb(torch.arange(T, device=idx.device))
 
         return tok + pos
