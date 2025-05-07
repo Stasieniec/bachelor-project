@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c2854a7-d638-4a0e-bcac-57bd5454c0d4" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/project_experiments/text/enwik8/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/text/enwik8/evaluate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/text/enwik8/generate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_experiments/text/enwik8/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/evaluate_enwiki8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/generate_enwiki8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/train_enwiki8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/data/enwiki8_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/models/gpt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_25,_2_16 PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_14_25__2_16PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/evaluate_imdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/train_imdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/data/enwiki8_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/shared/data/enwiki8_dataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
