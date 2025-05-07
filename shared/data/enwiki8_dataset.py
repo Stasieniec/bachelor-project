@@ -26,9 +26,11 @@ class WikipediaDataModule(Dataset):
     def __init__(self,
                  split: str,                    # "train" | "val" | "test"
                  block_size: int = 512,
+                 stride = 256,
                  path: str | pathlib.Path = "shared/data/enwik8.gz"):
         assert split in SPLIT_SIZES, f"split must be one of {list(SPLIT_SIZES)}"
         self.block = block_size
+        self.stride = stride
 
         # --- load full 100 MB only once and cache on the class ----------------
         if not hasattr(WikipediaDataModule, "_full_data"):
@@ -50,10 +52,10 @@ class WikipediaDataModule(Dataset):
 
     # ---------------------------------------------------------------------
     def __len__(self):
-        # last window must have a target;  -1  because y is shifted by 1
-        return len(self.data) - self.block - 1
+        return (len(self.data) - self.block) // self.stride   # NEW
 
-    def __getitem__(self, idx: int):
-        x = self.data[idx              : idx + self.block]       # (block,)
-        y = self.data[idx + 1          : idx + self.block + 1]   # (block,)
+    def __getitem__(self, idx):
+        start = idx * self.stride                             # NEW
+        x = self.data[start : start + self.block].long()
+        y = self.data[start + 1 : start + self.block + 1].long()
         return x, y
