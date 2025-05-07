@@ -139,7 +139,7 @@ class SimpleGPT(nn.Module):
         self.head = nn.Linear(d_model, vocab_size, bias = False)
 
         # Weight-tying trick
-        self.head.weight = self.embed.tok_emb.weight
+        #self.head.weight = self.embed.tok_emb.weight
 
         self.block_size = block_size
 
